@@ -35,6 +35,8 @@ interface IprofileRes {
 
 const handleLogout = ()=>{
     localStorage.removeItem("user_access")
+    // update shared state so layout updates immediately
+    useState<string | null>("user_access").value = null;
     router.push('/login')
 }
 
